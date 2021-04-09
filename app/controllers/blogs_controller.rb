@@ -4,6 +4,9 @@ class BlogsController < ApplicationController
   end
 
   def show
+    @blog = Blog.find(params[:id])
+    blog.save
+    redirect_to blog_path(blog.id)
   end
 
   def new
